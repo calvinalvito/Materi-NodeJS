@@ -1,0 +1,91 @@
+Apa itu NodeJS
+Node JS merupakan teknologi yang bisa digunakan untuk menjalankan kode JS diluar web browser
+
+Concurrency dan Pararel
+Concurrency artinya mengerjakan beberapa pekerjaan satu persatu (bergantian)
+Parallel artinya mengerjakan beberapa pekerjaan pada satu waktu
+(Mengerjakan pada waktu yang sama)
+
+Syncronous dan Asynchronous 
+Synchronous adalah ketika kode program kita berjalan secara sequential dan semua tahapan ditunggu sampai prosesnya selesai baru akan dieksekusi ke tahapan selanjutnya
+
+Asynchronous adalah ketika kode program kita berjalan dan tidak perlu menunggu eksekusi kode tersebut selesai, kita bisa lanjutkan ke tahapan kode program selanjutnya
+
+Treadpol Web Model
+Tread adalah proses ringan yang biasanya dibuat saat membuat aplikasi
+Walaupun bisa dibilang ringan, namun jika terlalu banyak membuat thread, maka tetap akan memberatkan sistem operasi.
+Oleh karena itu, biasanya kita akan menggunakan threadpool untuk melakukan management thread
+Threadpool merupakan tempat dimana kita menyimpan thread, ketika kita butuh kita akan ambil dari threadpool, ketika sudah selesai, kita akan kembalikan thread nya ke threadpool
+Dengan threadpool kita bisa memanfaatkan thread yang sama berkali kali tanpa harus membuat thread baru terus menerus.
+Namun threadpool model memiliki kekurangan, ketika thread sedang sibuk semua, secara otomatis request selanjutnya harus menunggu sampai ada thread yang selesai melakukan tugas sebelumnya.
+
+Blocking
+Saat membuat kode program, secara default kode program akan berjalan secara blocking atau Synchronous
+Artinya kita harus menunggu sebuah kode selesai sebelum kode selanjutnya dieksekusi.
+Contohnya ketika kita membuat kode program untuk membaca file, jika kode kita blocking maka kita harus menunggu program selesai membaca file baru kita bisa melanjutkan kode program selanjutnya.
+
+Non Blocking
+Non blocking berbeda dengan blocking kode program non blocking akan dieksekusi tanpa harus menunggu kode program tersebut selesai.
+Non blocking akan dijalankan secara asynchronous 
+Ketika memanggil kode non blocking biasnya kita perlu mengirimkan callback untuk dipanggil oleh kode non blocking ketika kodenya sudah selesai.
+Contohnya non blocking adalah JS Async seperti AJAX, Fetch API dan lain lain.
+
+Node REPL (Read Eval Print Loop)
+Yaitu mekanisme dimana program bisa memnaca langsung kode program yang diketikan,
+lalu mengeksekusinya, menampilkan hasilnya lalu mengulanginya dari awal
+Untuk menggunakan NodeJS REPL cukup jalankan aplikasi node saja
+> node
+
+Modules
+Standar Library yang terdapat di Node JS bisa kita gunakan layalnya JS Modules
+Karena Node Js menggunakan Modules, jika ingin menggunakan modules, kita juga perlu
+memberi tahu bahwa file JS kita menggunakan modules, caranya dengan mengubah nama file dari
+.js menjadi .mjs
+
+Global Async
+Saat kita belajar JavaScript untuk menggunakan Async Await, bisanya kita perlu
+membuat dahulu function yang kita tandai sebagai asynchronous
+Saat kita menggunakan Module, secara default global code adalah asynchronous
+oleh karena itu kita bisa menggunakan AsyncAwait
+
+Debugger
+NodeJS memiliki fitur debugger dimana kita bisa mengikuti tahapan eksekusi program
+di Node JS
+Hal ini sangat cocok ketika kita melakukan proses sebugging mencari
+sebab masalah yang terjadi.
+Breakpoint
+Dalam debugging, terdapat istilah breakpoint, yaitu lokasi dimana
+kita ingin menghentikan eksekusi kode program
+Biasanya ini dilakukan untuk mengawasi data-data disekitar lokasi
+berhentinya tersebut
+Perintah Debugger
+Saat masuk ke mode debug, ada beberapa perintah yang bisa kita gunakan Dalam
+melakukan debugging
+const, c: Continue Execution
+next, n : Step next
+step, s: Step in
+out, o: Step out
+pause : Pause running code
+
+DNS
+DNS merupakan standar library yang bisa digunakan untuk bekerja
+dengan DNS (Domain Name Server)
+
+Event
+Event adalah standar libaray di Node JS yang bisa digunakan sebagai
+implementasi Event Listener
+Didalam Events terdapat sebuah class bernama EventEmitter yang bisa 
+digunakan untuk menampung data listener per jenis Event
+Lalu kita bisa melakukan emmit untuk mentrigger jenis event dan mengirimkan
+ke event tersebut.
+
+Global
+Didalam NodeJS terdapat library berupa variable function yang secara global
+bisa diakses dimana saja, tanpa harus melakukan import
+Kita bisa melihat detail apa saja fitur yang terdapat secara global di halaman dokumentasinya
+
+Process
+Process merupakan standar library yang digunakan untuk mendapatkan
+informasi proses NodeJS yang sedang berjalan
+Process juga merupakan instance dari Event Emiiter, sehingga bisa menambahkan listener 
+kedalam proses.
