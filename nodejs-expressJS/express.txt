@@ -1,0 +1,60 @@
+Penganalan Express JS
+Express JS adalah salah satu web framework open source paling populer di NodeJS
+Express JS pertama kali dibuat tahun 2010 dan karena sangat populer 
+express JS sekarang sudah menjadi hal wajib yang dikuasai ketika akan membuat web menggunakan NodeJs
+
+Application
+Saat membuat web menggunakan express js kita akan membuat object application.
+Application adalah object utama dalam library ExpressJS
+
+Menjalankan Application
+Application secara default tidak berjalan, jika kita ingin menjalankan application nya, kita perlu menggunakan method listen(port)
+Dimana port adalah nomor port yang ig=ngin kita gunakan untuk menjalankan webnya. Pastikan port yang kita pilih tidak bentrok dengan aplikasi lain.
+
+Basic Routing
+Routing 
+Saat kita membuat web, biasanya kita akan membuat banyak sekali URL path.
+Routing merupakan teknik yang digunakan untuk meneruskan request dari URL ke callback yang kita tuju.
+Routing di ExpressJS bisa menggunakan objectApplication dan menggunakan method sesuai dengan nama HTTP methodnya.
+
+Routing Method
+app.connect(path, callback)     | HTTP Method connect
+app.get(path,callback)          | HTTP Method GET
+app.post(path,callback)         | HTTP Method POST
+app.put(path,callback)          | HTTP Method PUT
+app.delete(path,callback)       | HTTP Method DELETE
+app.options(path,callback)      | HTTP Method OPTIONS
+app.trace(path,callback)        | HTTP Method TRACE
+app.head(path,callback)         | HTTP Method HEAD
+app.path(path,callback)         | HTTP Method PATCH
+app.all(path,callback)          | Semua HTTP Method
+
+Unit Test
+Salah satu yang sulit ketika membuat aplikasi web yang harus berjalan yaitu dengan melakukan automation test.
+Jika melakukan manual test, terlihat mudah tinggal kita buka melalui browser.
+Namun dalam pekerjaan sehari-hari, lamban laun, hal ini akan menyulitkan kita ketika harus melakukan manual test jika terdapat perubahan diaplikasi kita.
+Oleh karena itu sangat direkomendasian menggunakan unit test, walaupun aplikasinya dalam bentuk web.
+
+Supertest
+Supertest adalah salah satu library yang bisa digunakan untuk membantu melakukan pengetesan web express js.
+Dengan supertest, kita akan lebih mudah membuat unit testnya, dibanding melakukan secara manual.
+npm install supertest --save-dev
+
+Request
+Saat kita membuat callback di router, parameter pertama adalah object request, yang secara otomatis diisi oleh ExpressJS.
+Object Request akan berisi informasi tentang HTTP request yang masuk ke callback tersebut.
+Ada banyak sekali informasi HTTP request yang bisa kita ambil dari object reuqest, seperti Query Param, Header, Body dan lainya.
+
+Request URL
+Untuk mendapatkan URL saat ini, kita bisa menggunakan object request untuk mendapatkan informasinya
+req.originalURL = untuk mendapatkan url secara full beserta  query paramnya.
+req.path = untuk mendapatkatkan path url tanpa query param.
+req.hostname = untuk mendapatkan nama host atau domain dari web
+req.protocol = untuk mendapatkan protocol dari url web.
+req.secure = untuk mengecek apakah url webnya https atau bukan.
+req.subdomains = untuk mendapatkan array subdomain dari url web.
+
+Request Query Param
+Request juga bisa digunakan untuk mengambil data query parameter
+Secara otomatis semua query parameter akan disimpan dalam bentuk object di req.query.
+
